@@ -1,11 +1,12 @@
 package main
 
 import (
-	"assignment01/timePack"
 	"context"
 	"log"
 	"net"
 	"time"
+
+	"github.com/ThomasITU/assignment01/timePack"
 
 	"google.golang.org/grpc"
 )

@@ -5,12 +5,12 @@ WORKDIR /build
 
 RUN export GO111MODULE=on
 
-RUN go get 
+RUN go get github.com/ThomasITU/assignment01
+RUN cd /build/ && git clone https://github.com/ThomasITU/assignment01.git
+RUN cd /build/assignment01/server && go build ./...
 
-
-RUN go get -d -v ./...
-RUN go install -v ./...
 
 EXPOSE 8080
 
-CMD ["go", "run", "main.go"]
+ENTRYPOINT [ "/build/assignment01/server/server" ]
+
